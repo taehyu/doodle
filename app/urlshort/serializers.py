@@ -1,16 +1,8 @@
-from rest_framework import serializers
-from .models import Urls
+from rest_framework.serializers import ModelSerializer
+from urlshort.models import UrlShort
 
 
-class UrlSerializer(serializers.ModelSerializer):
-    counting = serializers.ReadOnlyField()
-    changeurl = serializers.ReadOnlyField()
-
+class ShortenerSerializer(ModelSerializer):
     class Meta:
-        model = Urls
-        fields = (
-            'id',
-            'url',
-            'counting',
-            'changeurl',
-        )
+        model = UrlShort
+        fields = ('url_bf', 'url_af','count',)

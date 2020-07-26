@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'posts',
     'comments',
     'urlshort',
+    'rest_framework.authtoken',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

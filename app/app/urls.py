@@ -13,10 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken import views
+from rest_framework.routers import SimpleRouter
+
+from urlshort.views import UrlShortViewSet, RedirecturlViewSet
+
+router = SimpleRouter()
+# router.register(r'users', UserViewSet, basename='users')
+router.register(r'urlshort', UrlShortViewSet, basename='shortener')
+router.register(r'happy', RedirecturlViewSet, basename='redirect')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('urlshort.urls')),
+    url('', include(router.urls)),
 ]
