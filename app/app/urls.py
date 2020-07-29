@@ -37,15 +37,15 @@ from django.conf import settings
 from rest_framework import routers
 from rest_framework.routers import SimpleRouter
 
-from urls.views import UrlViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('core.urls'))
 ]
 
-router = routers.SimpleRouter()
-router.register(r'urls', UrlViewSet)
-urlpatterns += router.urls
+# router = routers.SimpleRouter()
+# router.register(r'urls', UrlViewSet)
+# urlpatterns += router.urls
 
 
 if settings.DEBUG:

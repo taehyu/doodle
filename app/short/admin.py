@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from users.models import Users
+from short.models import Short
 
-admin.register(Users)
+admin.register(Short)
