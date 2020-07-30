@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="enterprise" uuid="8679a454-7b26-467f-bbcb-9fed9471778f">
+    <data-source source="LOCAL" name="doodle@localhost" uuid="195bc3b9-5f41-444b-b974-77b4e66b8616">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/doodle</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="db" uuid="5378d051-f338-414d-aee2-80606b135bc0">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/python/enterprise.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/db.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>

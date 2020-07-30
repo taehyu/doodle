@@ -23,7 +23,9 @@ from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework.routers import SimpleRouter
 
 from short.views import ShortViewSet
+from users.views import UsersViewSet
 
 router = SimpleRouter()
 router.register(r'short', ShortViewSet)
+router.register(r'users', UsersViewSet)
 urlpatterns = router.urls
