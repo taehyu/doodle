@@ -60,6 +60,8 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+DEFAULT_FILE_STORAGE = 'inmemorystorage.InMemoryStorage'
+
 ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
@@ -182,3 +184,14 @@ CACHES = {
         }
     }
 }
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+sentry_sdk.init(
+    dsn="https://6c8615781baa48faa934564bf55011a3@o427976.ingest.sentry.io/5372840",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)

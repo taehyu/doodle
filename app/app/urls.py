@@ -38,9 +38,13 @@ from rest_framework import routers
 from rest_framework.routers import SimpleRouter
 
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('core.urls'))
+    path('api/', include('core.urls')),
+    path('sentry-debug/', trigger_error),
 ]
 
 # router = routers.SimpleRouter()
@@ -53,3 +57,4 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
